@@ -2717,7 +2717,7 @@ if( k <= 0 )
 	emovo( xi, frac );
 	return;
 	}
-if( k > (8 * sizeof(long) - 1) )
+if( k > (int)(8 * sizeof(long) - 1) )
 	{
 /*
 ;	long integer overflow: output large integer
@@ -2798,7 +2798,7 @@ if( k <= 0 )
 	emovo( xi, frac );
 	return;
 	}
-if( k > (8 * sizeof(long)) )
+if( k > (int)(8 * sizeof(long)) )
 	{
 /*
 ;	long integer overflow: output large integer
