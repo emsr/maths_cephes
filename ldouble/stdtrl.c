@@ -179,7 +179,7 @@ else
 if( t < 0.0L )
 	p = -p;	/* note destruction of relative accuracy */
 
-	p = 0.5L + 0.5L * p;
+p = 0.5L + 0.5L * p;
 return(p);
 }
 
