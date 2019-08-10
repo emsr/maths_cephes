@@ -4,9 +4,6 @@ project(maths_cephes LANGUAGES CXX C)
 
 
 add_library(maths_cephes SHARED
-            maths_cephes.h
-	    bessel/cephes_bessel.h
-	    bessel/mconf.h
 	    bessel/airy.c
 	    bessel/hyp2f1.c
 	    bessel/hyperg.c
@@ -23,8 +20,6 @@ add_library(maths_cephes SHARED
 	    bessel/psi.c
 	    bessel/struve.c
 	    bessel/yn.c
-	    cmath/cephes_cmath.h
-	    cmath/mconf.h
 	    cmath/acosh.c
 	    cmath/asin.c
 	    cmath/asinh.c
@@ -55,8 +50,6 @@ add_library(maths_cephes SHARED
 	    cmath/tandg.c
 	    cmath/tanh.c
 	    cmath/unity.c
-	    cprob/cephes_cprob.h
-	    cprob/mconf.h
 	    cprob/bdtr.c
 	    cprob/btdtr.c
 	    cprob/chdtr.c
@@ -75,15 +68,11 @@ add_library(maths_cephes SHARED
 	    cprob/ndtri.c
 	    cprob/pdtr.c
 	    cprob/stdtr.c
-	    ellf/cephes_ellf.h
-	    ellf/mconf.h
 	    ellf/ellie.c
 	    ellf/ellik.c
 	    ellf/ellpe.c
 	    ellf/ellpj.c
 	    ellf/ellpk.c
-	    ldouble/cephes_ldouble.h
-	    ldouble/mconf.h
 	    ldouble/acoshl.c
 	    ldouble/asinl.c
 	    ldouble/asinhl.c
@@ -134,8 +123,6 @@ add_library(maths_cephes SHARED
 	    ldouble/tanhl.c
 	    ldouble/unityl.c
 	    ldouble/ynl.c
-	    misc/cephes_misc.h
-	    misc/mconf.h
 	    misc/beta.c
 	    misc/chbevl.c
 	    misc/dawsn.c
@@ -154,19 +141,25 @@ add_library(maths_cephes SHARED
 	    misc/spence.c
 	    misc/zeta.c
 	    misc/zetac.c
-	    polyn/cephes_polyn.h
-	    polyn/mconf.h
 	    polyn/euclid.c
 	    polyn/polmisc.c
 	    polyn/polrt.c
 	    polyn/polyn.c
 	    polyn/revers.c
-	    c9x-complex/cephes_cmplx.h
-	    c9x-complex/mconf.h
 	    c9x-complex/cmplx.c
 	    c9x-complex/cgamma.c
 	    c9x-complex/cpolylog.c
            )
+target_include_directories(maths_cephes PUBLIC
+  .
+  bessel
+  cmath
+  cprob
+  ellf
+  ldouble
+  misc
+  polyn
+  c9x-complex)
 
 # This was an interesting disaster!
 #	    cmath/sincos.c
