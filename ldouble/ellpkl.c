@@ -174,8 +174,7 @@ long double polevll(), logl();
 #endif
 extern long double MACHEPL, MAXNUML;
 
-long double ellpkl(x)
-long double x;
+long double ellpkl(long double x)
 {
 
 if( (x < 0.0L) || (x > 1.0L) )

@@ -60,8 +60,7 @@ extern long double incbetl ( long double, long double, long double );
 long double incbetl();
 #endif
 
-long double btdtrl( a, b, x )
-long double a, b, x;
+long double btdtrl( long double a, long double b, long double x )
 {
 
 return( incbetl( a, b, x ) );

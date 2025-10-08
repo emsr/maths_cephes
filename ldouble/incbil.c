@@ -52,8 +52,7 @@ long double incbetl(), expl(), fabsl(), logl(), sqrtl(), lgaml();
 long double ndtril();
 #endif
 
-long double incbil( aa, bb, yy0 )
-long double aa, bb, yy0;
+long double incbil( long double aa, long double bb, long double yy0 )
 {
 long double a, b, y0, d, y, x, x0, x1, lgm, yp, di, dithresh, yl, yh, xt;
 int i, rflg, dir, nflg;

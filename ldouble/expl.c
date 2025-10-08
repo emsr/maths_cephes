@@ -131,8 +131,7 @@ long double polevll(), floorl(), ldexpl(), isnanl();
 extern long double INFINITYL;
 #endif
 
-long double expl(x)
-long double x;
+long double expl(long double x)
 {
 long double px, xx;
 int n;

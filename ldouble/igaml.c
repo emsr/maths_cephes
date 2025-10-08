@@ -109,8 +109,7 @@ long double igamcl();
 #define MAXGAML 1755.455L
 extern long double MACHEPL, MINLOGL;
 
-long double igamcl( a, x )
-long double a, x;
+long double igamcl( long double a, long double x )
 {
 long double ans, c, yc, ax, y, z, r, t;
 long double pk, pkm1, pkm2, qk, qkm1, qkm2;
@@ -184,8 +183,7 @@ return( ans * ax );
  *
  */
 
-long double igaml( a, x )
-long double a, x;
+long double igaml( long double a, long double x )
 {
 long double ans, ax, c, r;
 

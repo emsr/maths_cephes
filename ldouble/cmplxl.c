@@ -106,9 +106,7 @@ cmplx conel = {1.0L, 0.0L};
 
 /*	c = b + a	*/
 
-void caddl( a, b, c )
-register cmplxl *a, *b;
-cmplxl *c;
+void caddl( register cmplxl *a, register cmplxl *b, cmplxl *c )
 {
 
 c->r = b->r + a->r;
@@ -118,9 +116,7 @@ c->i = b->i + a->i;
 
 /*	c = b - a	*/
 
-void csubl( a, b, c )
-register cmplxl *a, *b;
-cmplxl *c;
+void csubl( register cmplxl *a, register cmplxl *b, cmplxl *c )
 {
 
 c->r = b->r - a->r;
@@ -129,9 +125,7 @@ c->i = b->i - a->i;
 
 /*	c = b * a */
 
-void cmull( a, b, c )
-register cmplxl *a, *b;
-cmplxl *c;
+void cmull( register cmplxl *a, register cmplxl *b, cmplxl *c )
 {
 long double y;
 
@@ -144,9 +138,7 @@ c->r = y;
 
 /*	c = b / a */
 
-void cdivl( a, b, c )
-register cmplxl *a, *b;
-cmplxl *c;
+void cdivl( register cmplxl *a, register cmplxl *b, cmplxl *c )
 {
 long double y, p, q, w;
 
@@ -174,8 +166,7 @@ c->i = q/y;
 /*	b = a
    Caution, a `short' is assumed to be 16 bits wide.  */
 
-void cmovl( a, b )
-void *a, *b;
+void cmovl( void *a, void *b )
 {
 register short *pa, *pb;
 int i;
@@ -268,8 +259,7 @@ typedef struct
 #endif
 
 
-long double cabsl( z )
-register cmplxl *z;
+long double cabsl( register cmplxl *z )
 {
 long double x, y, b, re, im;
 int ex, ey, e;
@@ -382,8 +372,7 @@ return( b );
  */
 
 
-void csqrtl( z, w )
-cmplxl *z, *w;
+void csqrtl( cmplxl *z, cmplxl *w )
 {
 cmplxl q, s;
 long double x, y, r, t;
@@ -450,8 +439,7 @@ w->i *= 0.5L;
 }
 
 
-long double hypotl( x, y )
-long double x, y;
+long double hypotl( long double x, long double y )
 {
 cmplxl z;
 

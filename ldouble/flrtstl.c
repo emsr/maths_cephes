@@ -91,9 +91,7 @@ exit(0);
 }
 
 
-void prnum(str, x)
-char *str;
-unsigned short *x;
+void prnum(char *str, unsigned short *x)
 {
 int i;
 

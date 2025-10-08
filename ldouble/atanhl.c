@@ -113,8 +113,7 @@ extern long double INFINITYL;
 extern long double NANL;
 #endif
 
-long double atanhl(x)
-long double x;
+long double atanhl(long double x)
 {
 long double s, z;
 

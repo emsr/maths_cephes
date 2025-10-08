@@ -53,9 +53,7 @@ extern long double MAXLOGL;
 extern long double INFINITYL;
 
 
-long double expx2l (x, sign)
-     long double x;
-     int sign;
+long double expx2l (long double x, int sign)
 {
   long double u, u1, m, f;
 

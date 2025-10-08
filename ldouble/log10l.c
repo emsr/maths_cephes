@@ -214,8 +214,7 @@ extern long double INFINITYL;
 extern long double NANL;
 #endif
 
-long double log10l(x)
-long double x;
+long double log10l(long double x)
 {
 long double y;
 VOLATILE long double z;

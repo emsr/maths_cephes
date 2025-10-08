@@ -103,8 +103,7 @@ extern long double INFINITYL;
 extern long double NANL;
 #endif
 
-long double sinhl(x)
-long double x;
+long double sinhl(long double x)
 {
 long double a;
 

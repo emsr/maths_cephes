@@ -28,9 +28,7 @@ main ()
 }
 
 void 
-wronk (n, x)
-     int n;
-     long double x;
+wronk (int n, long double x)
 {
 
   Jnp1 = jnl (n + 1, x);

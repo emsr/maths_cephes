@@ -181,8 +181,7 @@ extern long double INFINITYL;
 extern long double NANL;
 #endif
 
-long double sinl(x)
-long double x;
+long double sinl(long double x)
 {
 long double y, z, zz;
 int j, sign;

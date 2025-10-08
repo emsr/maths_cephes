@@ -153,9 +153,7 @@ extern long double log1pl ( long double );
 long double incbetl(), incbil(), powl(), expm1l(), log1pl();
 #endif
 
-long double bdtrcl( k, n, p )
-int k, n;
-long double p;
+long double bdtrcl( int k, int n, long double p )
 {
 long double dk, dn;
 
@@ -191,9 +189,7 @@ return( dk );
 
 
 
-long double bdtrl( k, n, p )
-int k, n;
-long double p;
+long double bdtrl( int k, int n, long double p )
 {
 long double dk, dn, q;
 
@@ -224,7 +220,7 @@ return( dk );
 }
 
 
-long double bdtril( k, n, y )
+long double bdtril( int k, int n, long double y )
 int k, n;
 long double y;
 {

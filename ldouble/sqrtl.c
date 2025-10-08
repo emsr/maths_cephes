@@ -57,8 +57,7 @@ extern long double ldexpl ( long double, int );
 long double frexpl(), ldexpl();
 #endif
 
-long double sqrtl(x)
-long double x;
+long double sqrtl(long double x)
 {
 int e;
 long double z, w;

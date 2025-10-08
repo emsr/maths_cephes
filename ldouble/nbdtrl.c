@@ -129,9 +129,7 @@ extern long double incbil ( long double, long double, long double );
 long double incbetl(), powl(), incbil();
 #endif
 
-long double nbdtrcl( k, n, p )
-int k, n;
-long double p;
+long double nbdtrcl( int k, int n, long double p )
 {
 long double dk, dn;
 
@@ -153,9 +151,7 @@ return( incbetl( dk, dn, 1.0L - p ) );
 
 
 
-long double nbdtrl( k, n, p )
-int k, n;
-long double p;
+long double nbdtrl( int k, int n, long double p )
 {
 long double dk, dn;
 
@@ -176,9 +172,7 @@ return( incbetl( dn, dk, p ) );
 }
 
 
-long double nbdtril( k, n, p )
-int k, n;
-long double p;
+long double nbdtril( int k, int n, long double p )
 {
 long double dk, dn, w;
 

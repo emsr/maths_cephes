@@ -126,8 +126,7 @@ extern int isnanl ( long double );
 long double logl(), sqrtl(), polevll(), isnanl();
 #endif
 
-long double acoshl(x)
-long double x;
+long double acoshl(long double x)
 {
 long double a, z;
 

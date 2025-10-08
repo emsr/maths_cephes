@@ -69,8 +69,7 @@ long double ellikl();
 #endif
 extern long double PIL, PIO2L, MACHEPL, MAXNUML;
 
-long double ellikl( phi, m )
-long double phi, m;
+long double ellikl( long double phi, long double m )
 {
 long double a, b, c, e, temp, t, K;
 int d, mod, sign, npio2;

@@ -367,8 +367,7 @@ extern long double sqrtl ( long double );
 long double polevll(), p1evll(), logl(), sqrtl();
 #endif
 
-long double ndtril(y0)
-long double y0;
+long double ndtril(long double y0)
 {
 long double x, y, z, y2, x0, x1;
 int code;

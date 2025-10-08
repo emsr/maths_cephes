@@ -110,8 +110,7 @@ extern long double INFINITYL;
 extern long double NANL;
 #endif
 
-long double fabsl(x)
-long double x;
+long double fabsl(long double x)
 {
 union
   {
@@ -131,8 +130,7 @@ return( u.d );
 
 
 
-long double ceill(x)
-long double x;
+long double ceill(long double x)
 {
 long double y;
 
@@ -182,8 +180,7 @@ static unsigned short bmask[] = {
 
 
 
-long double floorl(x)
-long double x;
+long double floorl(long double x)
 {
 unsigned short *p;
 union
@@ -253,9 +250,7 @@ return(u.y);
 
 
 
-long double frexpl( x, pw2 )
-long double x;
-int *pw2;
+long double frexpl( long double x, int *pw2 )
 {
 union
   {
@@ -342,9 +337,7 @@ return( u.y );
 
 
 
-long double ldexpl( x, pw2 )
-long double x;
-int pw2;
+long double ldexpl( long double x, int pw2 )
 {
 union
   {

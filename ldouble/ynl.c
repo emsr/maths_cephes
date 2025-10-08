@@ -61,9 +61,7 @@ extern long double y1l ( long double );
 long double y0l(), y1l();
 #endif
 
-long double ynl( n, x )
-int n;
-long double x;
+long double ynl( int n, long double x )
 {
 long double an, anm1, anm2, r;
 int k, sign;

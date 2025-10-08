@@ -70,8 +70,7 @@ long double ellpel(), ellpkl(), elliel();
 extern long double PIL, PIO2L, MACHEPL;
 
 
-long double elliel( phi, m )
-long double phi, m;
+long double elliel( long double phi, long double m )
 {
 long double a, b, c, e, temp, lphi, t, E;
 int d, mod, npio2, sign;

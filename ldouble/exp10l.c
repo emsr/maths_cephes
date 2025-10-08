@@ -140,8 +140,7 @@ long double floorl(), ldexpl(), polevll(), p1evll(), isnanl();
 extern long double INFINITYL;
 #endif
 
-long double exp10l(x)
-long double x;
+long double exp10l(long double x)
 {
 long double px, xx;
 short n;

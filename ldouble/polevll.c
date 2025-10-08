@@ -141,10 +141,7 @@ long double NEGZEROL = 0.0L;
 /* Polynomial evaluator:
  *  P[0] x^n  +  P[1] x^(n-1)  +  ...  +  P[n]
  */
-long double polevll( x, p, n )
-long double x;
-void *p;
-int n;
+long double polevll( long double x, void *p, int n )
 {
 register long double y;
 register long double *P = (long double *)p;
@@ -163,10 +160,7 @@ return(y);
 /* Polynomial evaluator:
  *  x^n  +  P[0] x^(n-1)  +  P[1] x^(n-2)  +  ...  +  P[n]
  */
-long double p1evll( x, p, n )
-long double x;
-void *p;
-int n;
+long double p1evll( long double x, void *p, int n )
 {
 register long double y;
 register long double *P = (long double *)p;

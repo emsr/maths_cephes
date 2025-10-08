@@ -158,8 +158,7 @@ extern long double logl ( long double );
 long double polevll(), logl();
 #endif
 
-long double ellpel(x)
-long double x;
+long double ellpel(long double x)
 {
 
 if( (x <= 0.0L) || (x > 1.0L) )

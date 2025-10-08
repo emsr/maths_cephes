@@ -57,8 +57,7 @@ extern long double INFINITYL;
 extern long double NANL;
 #endif
 
-long double coshl(x)
-long double x;
+long double coshl(long double x)
 {
 long double y;
 

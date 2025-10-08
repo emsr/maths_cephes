@@ -62,8 +62,7 @@ extern int isnanl();
 extern long double INFINITYL;
 #endif
 
-long double cbrtl(x)
-long double x;
+long double cbrtl(long double x)
 {
 int e, rem, sign;
 long double z;

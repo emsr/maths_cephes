@@ -106,8 +106,7 @@ return 0;
  *	drand( &x );
  */
 
-int ldrand( a )
-long double *a;
+int ldrand( long double *a )
 {
 unsigned short r;
 

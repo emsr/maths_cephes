@@ -110,8 +110,7 @@ extern int isfinitel ( long double );
 long double logl(), sqrtl(), polevll(), p1evll(), isnanl(), isfinitel();
 #endif
 
-long double asinhl(x)
-long double x;
+long double asinhl(long double x)
 {
 long double a, z;
 int sign;

@@ -277,7 +277,7 @@ polcos( x, y, nn )
   double a, sc;
   double *w, *c;
   int i;
-  double sin(), cos();
+  double sin(double), cos(double);
 
   if (nn > N)
     {

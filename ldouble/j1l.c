@@ -317,8 +317,7 @@ long double sqrtl(), fabsl(), polevll(), p1evll(), cosl(), sinl(), logl();
 long double j1l();
 #endif
 
-long double j1l(x)
-long double x;
+long double j1l(long double x)
 {
 long double xx, y, z, modulus, phase;
 
@@ -515,8 +514,7 @@ extern long double MAXNUML;
 #define Y1Z3 8.59600586833116892643e0L
 #define Y1Z4 1.17491548308398812434e1L
 
-long double y1l(x)
-long double x;
+long double y1l(long double x)
 {
 long double xx, y, z, modulus, phase;
 

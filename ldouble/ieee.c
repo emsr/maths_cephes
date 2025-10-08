@@ -242,8 +242,7 @@ void einit()
 ; eclear( x );
 */
 
-void eclear( x )
-register unsigned short *x;
+void eclear( register unsigned short *x )
 {
 register int i;
 
@@ -258,8 +257,7 @@ for( i=0; i<NE; i++ )
  * emov( a, b );
  */
 
-void emov( a, b )
-register unsigned short *a, *b;
+void emov( register unsigned short *a, register unsigned short *b )
 {
 register int i;
 
@@ -275,8 +273,7 @@ for( i=0; i<NE; i++ )
 ;	eabs( x );
 */
 
-void eabs(x)
-unsigned short x[];	/* x is the memory address of a short */
+void eabs(unsigned short x[])
 {
 
 x[NE-1] &= 0x7fff; /* sign is top bit of last word of external format */
@@ -292,8 +289,7 @@ x[NE-1] &= 0x7fff; /* sign is top bit of last word of external format */
 ;	eneg( x );
 */
 
-void eneg(x)
-unsigned short x[];
+void eneg(unsigned short x[])
 {
 
 #ifdef NANS
@@ -308,8 +304,7 @@ x[NE-1] ^= 0x8000; /* Toggle the sign bit */
 /* Return 1 if external format number is negative,
  * else return zero.
  */
-int eisneg(x)
-unsigned short x[];
+int eisneg(unsigned short x[])
 {
 
 #ifdef NANS
@@ -326,8 +321,7 @@ else
 /* Return 1 if external format number has maximum possible exponent,
  * else return zero.
  */
-int eisinf(x)
-unsigned short x[];
+int eisinf(unsigned short x[])
 {
 
 if( (x[NE-1] & 0x7fff) == 0x7fff )
@@ -344,8 +338,7 @@ else
 
 /* Check if e-type number is not a number.
  */
-int eisnan(x)
-unsigned short x[];
+int eisnan(unsigned short x[])
 {
 
 #ifdef NANS
@@ -372,8 +365,7 @@ return (0);
 ; operations involving inifinity.
 */
 
-void einfin(x)
-register unsigned short *x;
+void einfin(register unsigned short *x)
 {
 register int i;
 
@@ -415,8 +407,7 @@ if( rndprc < NBITS )
 /* Move in external format number,
  * converting it to internal format.
  */
-void emovi( a, b )
-unsigned short *a, *b;
+void emovi( unsigned short *a, unsigned short *b )
 {
 register unsigned short *p, *q;
 int i;
@@ -461,8 +452,7 @@ for( i=0; i<NE-1; i++ )
 /* Move internal format number out,
  * converting it to external format.
  */
-void emovo( a, b )
-unsigned short *a, *b;
+void emovo( unsigned short *a, unsigned short *b )
 {
 register unsigned short *p, *q;
 unsigned short i;
@@ -502,8 +492,7 @@ for( i=0; i<NE-1; i++ )
 /* Clear out internal format number.
  */
 
-void ecleaz( xi )
-register unsigned short *xi;
+void ecleaz( register unsigned short *xi )
 {
 register int i;
 
@@ -513,8 +502,7 @@ for( i=0; i<NI; i++ )
 
 /* same, but don't touch the sign. */
 
-void ecleazs( xi )
-register unsigned short *xi;
+void ecleazs( register unsigned short *xi )
 {
 register int i;
 
@@ -528,8 +516,7 @@ for(i=0; i<NI-1; i++)
 
 /* Move internal format number from a to b.
  */
-void emovz( a, b )
-register unsigned short *a, *b;
+void emovz( register unsigned short *a, register unsigned short *b )
 {
 register int i;
 
@@ -542,8 +529,7 @@ for( i=0; i<NI-1; i++ )
 /* Return nonzero if internal format number is a NaN.
  */
 
-int eiisnan (x)
-unsigned short x[];
+int eiisnan (unsigned short x[])
 {
 int i;
 
@@ -562,8 +548,7 @@ return(0);
 /* Return nonzero if internal format number is infinite. */
 
 static int 
-eiisinf (x)
-     unsigned short x[];
+eiisinf (unsigned short x[])
 {
 
 #ifdef NANS
@@ -588,8 +573,7 @@ eiisinf (x)
 ;		 0 if a == b
 ;		-1 if a < b
 */
-int ecmpm( a, b )
-register unsigned short *a, *b;
+int ecmpm( register unsigned short *a, register unsigned short *b )
 {
 int i;
 
@@ -614,8 +598,7 @@ else
 ;	Shift significand down by 1 bit
 */
 
-void eshdn1(x)
-register unsigned short *x;
+void eshdn1(register unsigned short *x)
 {
 register unsigned short bits;
 int i;
@@ -641,8 +624,7 @@ for( i=M; i<NI; i++ )
 ;	Shift significand up by 1 bit
 */
 
-void eshup1(x)
-register unsigned short *x;
+void eshup1(register unsigned short *x)
 {
 register unsigned short bits;
 int i;
@@ -668,8 +650,7 @@ for( i=M; i<NI; i++ )
 ;	Shift significand down by 8 bits
 */
 
-void eshdn8(x)
-register unsigned short *x;
+void eshdn8(register unsigned short *x)
 {
 register unsigned short newbyt, oldbyt;
 int i;
@@ -690,8 +671,7 @@ for( i=M; i<NI; i++ )
 ;	Shift significand up by 8 bits
 */
 
-void eshup8(x)
-register unsigned short *x;
+void eshup8(register unsigned short *x)
 {
 int i;
 register unsigned short newbyt, oldbyt;
@@ -713,8 +693,7 @@ for( i=M; i<NI; i++ )
 ;	Shift significand up by 16 bits
 */
 
-void eshup6(x)
-register unsigned short *x;
+void eshup6(register unsigned short *x)
 {
 int i;
 register unsigned short *p;
@@ -732,8 +711,7 @@ for( i=M; i<NI-1; i++ )
 ;	Shift significand down by 16 bits
 */
 
-void eshdn6(x)
-register unsigned short *x;
+void eshdn6(register unsigned short *x)
 {
 int i;
 register unsigned short *p;
@@ -752,8 +730,7 @@ for( i=M; i<NI-1; i++ )
 ;	x + y replaces y
 */
 
-void eaddm( x, y )
-unsigned short *x, *y;
+void eaddm( unsigned short *x, unsigned short *y )
 {
 register unsigned long a;
 int i;
@@ -780,8 +757,7 @@ for( i=M; i<NI; i++ )
 ;	y - x replaces y
 */
 
-void esubm( x, y )
-unsigned short *x, *y;
+void esubm( unsigned short *x, unsigned short *y )
 {
 unsigned long a;
 int i;
@@ -809,8 +785,7 @@ for( i=M; i<NI; i++ )
 static unsigned short equot[NI] = {0}; /* was static */
 
 #if 0
-int edivm( den, num )
-unsigned short den[], num[];
+int edivm( unsigned short den[], unsigned short num[] )
 {
 int i;
 register unsigned short *p, *q;
@@ -904,8 +879,7 @@ return( (int )j );
 }
 
 /* Multiply significands */
-int emulm( a, b )
-unsigned short a[], b[];
+int emulm( unsigned short a[], unsigned short b[] )
 {
 unsigned short *p, *q;
 int i, j, k;
@@ -953,9 +927,7 @@ return(j);
 /* Multiply significand of e-type number b
 by 16-bit quantity a, e-type result to c. */
 
-void m16m( a, b, c )
-unsigned short a;
-unsigned short b[], c[];
+void m16m( unsigned short a, unsigned short b[], unsigned short c[] )
 {
 register unsigned short *pp;
 register unsigned long carry;
@@ -997,8 +969,7 @@ for( i=M; i<NI; i++ )
 is permitted to have its high guard word nonzero.  */
 
 
-int edivm( den, num )
-unsigned short den[], num[];
+int edivm( unsigned short den[], unsigned short num[] )
 {
 int i;
 register unsigned short *p;
@@ -1087,8 +1058,7 @@ return( (int )j );
 
 
 /* Multiply significands */
-int emulm( a, b )
-unsigned short a[], b[];
+int emulm( unsigned short a[], unsigned short b[] )
 {
 unsigned short *p, *q;
 unsigned short pprod[NI];
@@ -1169,12 +1139,7 @@ static unsigned short rebit = 0;
 static int re = 0;
 static unsigned short rbit[NI] = {0,0,0,0,0,0,0,0};
 
-void emdnorm( s, lost, subflg, exp, rcntrl )
-unsigned short s[];
-int lost;
-int subflg;
-long exp;
-int rcntrl;
+void emdnorm( unsigned short s[], int lost, int subflg, long exp, int rcntrl )
 {
 int i, j;
 unsigned short r;
@@ -1381,8 +1346,7 @@ else
 
 static int subflg = 0;
 
-void esub( a, b, c )
-unsigned short *a, *b, *c;
+void esub( unsigned short *a, unsigned short *b, unsigned short *c )
 {
 
 #ifdef NANS
@@ -1417,8 +1381,7 @@ eadd1( a, b, c );
 ;	unsigned short a[NE], b[NE], c[NE];
 ;	eadd( a, b, c );	 c = b + a
 */
-void eadd( a, b, c )
-unsigned short *a, *b, *c;
+void eadd( unsigned short *a, unsigned short *b, unsigned short *c )
 {
 
 #ifdef NANS
@@ -1448,8 +1411,7 @@ subflg = 0;
 eadd1( a, b, c );
 }
 
-void eadd1( a, b, c )
-unsigned short *a, *b, *c;
+void eadd1( unsigned short *a, unsigned short *b, unsigned short *c )
 {
 unsigned short ai[NI], bi[NI], ci[NI];
 int i, lost, j, k;
@@ -1557,8 +1519,7 @@ emovo( bi, c );
 ;	unsigned short a[NE], b[NE], c[NE];
 ;	ediv( a, b, c );	c = b / a
 */
-void ediv( a, b, c )
-unsigned short *a, *b, *c;
+void ediv( unsigned short *a, unsigned short *b, unsigned short *c )
 {
 unsigned short ai[NI], bi[NI];
 int i, sign;
@@ -1659,8 +1620,7 @@ else
 ;	unsigned short a[NE], b[NE], c[NE];
 ;	emul( a, b, c );	c = b * a
 */
-void emul( a, b, c )
-unsigned short *a, *b, *c;
+void emul( unsigned short *a, unsigned short *b, unsigned short *c )
 {
 unsigned short ai[NI], bi[NI];
 int i, j, sign;
@@ -1756,8 +1716,7 @@ else
 ;	unsigned short x[N+2];
 ;	e53toe( &d, x );
 */
-void e53toe( pe, y )
-unsigned short *pe, *y;
+void e53toe( unsigned short *pe, unsigned short *y )
 {
 #ifdef DEC
 
@@ -1843,8 +1802,7 @@ emovo( yy, y );
 #endif /* not DEC */
 }
 
-void e64toe( pe, y )
-unsigned short *pe, *y;
+void e64toe( unsigned short *pe, unsigned short *y )
 {
 unsigned short yy[NI];
 unsigned short *p, *q, *e;
@@ -1923,8 +1881,7 @@ for( i=0; i<NE; i++ )
 	*q++ = *p++;
 }
 
-void e113toe(pe,y)
-unsigned short *pe, *y;
+void e113toe(unsigned short *pe,unsigned short *y)
 {
 register unsigned short r;
 unsigned short *e, *p;
@@ -2003,8 +1960,7 @@ emovo(yy,y);
 ;	unsigned short x[N+2];
 ;	dtox( &d, x );
 */
-void e24toe( pe, y )
-unsigned short *pe, *y;
+void e24toe( unsigned short *pe, unsigned short *y )
 {
 register unsigned short r;
 register unsigned short *p, *e;
@@ -2083,8 +2039,7 @@ if( denorm )
 emovo( yy, y );
 }
 
-void etoe113(x,e)
-unsigned short *x, *e;
+void etoe113(unsigned short *x,unsigned short *e)
 {
 unsigned short xi[NI];
 long exp;
@@ -2113,8 +2068,7 @@ toe113 (xi, e);
 }
 
 /* move out internal format to ieee long double */
-static void toe113(a,b)
-unsigned short *a, *b;
+static void toe113(unsigned short *a,unsigned short *b)
 {
 register unsigned short *p, *q;
 unsigned short i;
@@ -2164,8 +2118,7 @@ for (i = 0; i < 7; i++)
 }
 
 
-void etoe64( x, e )
-unsigned short *x, *e;
+void etoe64( unsigned short *x, unsigned short *e )
 {
 unsigned short xi[NI];
 long exp;
@@ -2194,8 +2147,7 @@ toe64( xi, e );
 }
 
 /* move out internal format to ieee long double */
-static void toe64( a, b )
-unsigned short *a, *b;
+static void toe64( unsigned short *a, unsigned short *b )
 {
 register unsigned short *p, *q;
 unsigned short i;
@@ -2270,22 +2222,19 @@ for( i=0; i<4; i++ )
 
 #ifdef DEC
 
-void etoe53( x, e )
-unsigned short *x, *e;
+void etoe53( unsigned short *x, unsigned short *e )
 {
 etodec( x, e ); /* see etodec.c */
 }
 
-static void toe53( x, y )
-unsigned short *x, *y;
+static void toe53( unsigned short *x, unsigned short *y )
 {
 todec( x, y );
 }
 
 #else
 
-void etoe53( x, e )
-unsigned short *x, *e;
+void etoe53( unsigned short *x, unsigned short *e )
 {
 unsigned short xi[NI];
 long exp;
@@ -2314,8 +2263,7 @@ toe53( xi, e );
 }
 
 
-static void toe53( x, y )
-unsigned short *x, *y;
+static void toe53( unsigned short *x, unsigned short *y )
 {
 unsigned short i;
 unsigned short *p;
@@ -2402,8 +2350,7 @@ i |= *p++ & (unsigned short )0x0f;	/* *p = xi[M] */
 ;	unsigned short x[N+2];
 ;	xtod( x, &d );
 */
-void etoe24( x, e )
-unsigned short *x, *e;
+void etoe24( unsigned short *x, unsigned short *e )
 {
 long exp;
 unsigned short xi[NI];
@@ -2431,8 +2378,7 @@ nonorm:
 toe24( xi, e );
 }
 
-static void toe24( x, y )
-unsigned short *x, *y;
+static void toe24( unsigned short *x, unsigned short *y )
 {
 unsigned short i;
 unsigned short *p;
@@ -2519,8 +2465,7 @@ i |= *p++ & (unsigned short )0x7f;	/* *p = xi[M] */
  *          -1 if a < b
  *          -2 if either a or b is a NaN.
  */
-int ecmp( a, b )
-unsigned short *a, *b;
+int ecmp( unsigned short *a, unsigned short *b )
 {
 unsigned short ai[NI], bi[NI];
 register unsigned short *p, *q;
@@ -2588,8 +2533,7 @@ else
  * unsigned short x[NE], y[NE]
  * eround( x, y );
  */
-void eround( x, y )
-unsigned short *x, *y;
+void eround( unsigned short *x, unsigned short *y )
 {
 
 eadd( ehalf, x, y );
@@ -2607,9 +2551,9 @@ efloor( y, y );
 ;	ltoe( &l, x );
 ; note &l is the memory address of l
 */
-void ltoe( lp, y )
-long *lp;	/* lp is the memory address of a long integer */
-unsigned short *y;	/* y is the address of a short */
+void ltoe( long *lp, unsigned short *y )
+/* lp is the memory address of a long integer */
+/* y is the address of a short */
 {
 unsigned short yi[NI];
 unsigned long ll;
@@ -2655,9 +2599,9 @@ emovo( yi, y );	/* output the answer */
 ;	ltox( &l, x );
 ; note &l is the memory address of l
 */
-void ultoe( lp, y )
-unsigned long *lp; /* lp is the memory address of a long integer */
-unsigned short *y;	/* y is the address of a short */
+void ultoe( unsigned long *lp, unsigned short *y )
+/* lp is the memory address of a long integer */
+/* y is the address of a short */
 {
 unsigned short yi[NI];
 unsigned long ll;
@@ -2699,10 +2643,7 @@ emovo( yi, y );	/* output the answer */
   The integer output has the sign of the input.  The fraction is
   the positive fractional part of abs(x).
 */
-void eifrac( x, i, frac )
-unsigned short *x;
-long *i;
-unsigned short *frac;
+void eifrac( unsigned short *x, long *i, unsigned short *frac )
 {
 unsigned short xi[NI];
 int j, k;
@@ -2780,10 +2721,7 @@ emovo( xi, frac );
   A negative e type input yields integer output = 0
   but correct fraction.
 */
-void euifrac( x, i, frac )
-unsigned short *x;
-unsigned long *i;
-unsigned short *frac;
+void euifrac( unsigned short *x, unsigned long *i, unsigned short *frac )
 {
 unsigned short xi[NI];
 int j, k;
@@ -2854,9 +2792,7 @@ emovo( xi, frac );
 ;	Shifts significand area up or down by the number of bits
 ;	given by the variable sc.
 */
-int eshift( x, sc )
-unsigned short *x;
-int sc;
+int eshift( unsigned short *x, int sc )
 {
 unsigned short lost;
 unsigned short *p;
@@ -2924,8 +2860,7 @@ return( (int )lost );
 ; Shift normalizes the significand area pointed to by argument
 ; shift count (up = positive) is returned.
 */
-int enormlz(x)
-unsigned short x[];
+int enormlz(unsigned short *x)
 {
 register unsigned short *p;
 int sc;
@@ -3093,10 +3028,7 @@ static unsigned short emtens[NTEN+1][NE] = {
 };
 #endif
 
-void e24toasc( x, string, ndigs )
-unsigned short x[];
-char *string;
-int ndigs;
+void e24toasc( unsigned short *x, char *string, int ndigs )
 {
 unsigned short w[NI];
 
@@ -3105,10 +3037,7 @@ etoasc( w, string, ndigs );
 }
 
 
-void e53toasc( x, string, ndigs )
-unsigned short x[];
-char *string;
-int ndigs;
+void e53toasc( unsigned short *x, char *string, int ndigs )
 {
 unsigned short w[NI];
 
@@ -3117,10 +3046,7 @@ etoasc( w, string, ndigs );
 }
 
 
-void e64toasc( x, string, ndigs )
-unsigned short x[];
-char *string;
-int ndigs;
+void e64toasc( unsigned short *x, char *string, int ndigs )
 {
 unsigned short w[NI];
 
@@ -3128,10 +3054,7 @@ e64toe( x, w );
 etoasc( w, string, ndigs );
 }
 
-void e113toasc (x, string, ndigs)
-unsigned short x[];
-char *string;
-int ndigs;
+void e113toasc (unsigned short *x, char *string, int ndigs)
 {
 unsigned short w[NI];
 
@@ -3140,10 +3063,7 @@ etoasc (w, string, ndigs);
 }
 
 
-void etoasc( x, string, ndigs )
-unsigned short x[];
-char *string;
-int ndigs;
+void etoasc( unsigned short *x, char *string, int ndigs )
 {
 long digit;
 unsigned short y[NI], t[NI], u[NI], w[NI];
@@ -3453,18 +3373,14 @@ rndprc = rndsav;
 */
 
 /* ASCII to single */
-void asctoe24( s, y )
-char *s;
-unsigned short *y;
+void asctoe24( char *s, unsigned short *y )
 {
 asctoeg( s, y, 24 );
 }
 
 
 /* ASCII to double */
-void asctoe53( s, y )
-char *s;
-unsigned short *y;
+void asctoe53( char *s, unsigned short *y )
 {
 #ifdef DEC
 asctoeg( s, y, 56 );
@@ -3475,9 +3391,7 @@ asctoeg( s, y, 53 );
 
 
 /* ASCII to long double */
-void asctoe64( s, y )
-char *s;
-unsigned short *y;
+void asctoe64( char *s, unsigned short *y )
 {
 asctoeg( s, y, 64 );
 }
@@ -3491,9 +3405,7 @@ asctoeg( s, y, 113 );
 }
 
 /* ASCII to super double */
-void asctoe( s, y )
-char *s;
-unsigned short *y;
+void asctoe( char *s, unsigned short *y )
 {
 asctoeg( s, y, NBITS );
 }
@@ -3501,10 +3413,7 @@ asctoeg( s, y, NBITS );
 /* Space to make a copy of the input string: */
 static char lstr[82] = {0};
 
-void asctoeg( ss, y, oprec )
-char *ss;
-unsigned short *y;
-int oprec;
+void asctoeg( char *ss, unsigned short *y, int oprec )
 {
 unsigned short yy[NI], xt[NI], tt[NI];
 int esign, decflg, sgnflg, nexp, exp, prec, lost;
@@ -3831,8 +3740,7 @@ static unsigned short bmask[] = {
 0x0000,
 };
 
-void efloor( x, y )
-unsigned short x[], y[];
+void efloor( unsigned short *x, unsigned short *y )
 {
 register unsigned short *p;
 int e, expon, i;
@@ -3886,10 +3794,7 @@ if( (unsigned short )expon & (unsigned short )0x8000 )
  * For example, 1.1 = 0.55 * 2**1
  * Handles denormalized numbers properly using long integer exp.
  */
-void efrexp( x, exp, s )
-unsigned short x[];
-long *exp;
-unsigned short s[];
+void efrexp( unsigned short *x, long *exp, unsigned short *s )
 {
 unsigned short xi[NI];
 long li;
@@ -3915,10 +3820,7 @@ emovo( xi, s );
  *
  * Returns y = x * 2**pwr2.
  */
-void eldexp( x, pwr2, y )
-unsigned short x[];
-long pwr2;
-unsigned short y[];
+void eldexp( unsigned short *x, long pwr2, unsigned short *y )
 {
 unsigned short xi[NI];
 long li;
@@ -3966,8 +3868,7 @@ emovo( num, c );
 }
 
 
-void eiremain( den, num )
-unsigned short den[], num[];
+void eiremain( unsigned short *den, unsigned short *num )
 {
 long ld, ln;
 unsigned short j;
@@ -4075,8 +3976,7 @@ for (i=0; i < n; i++)
 static int esqinited = 0;
 static unsigned short sqrndbit[NI];
 
-void esqrt( x, y )
-unsigned short *x, *y;
+void esqrt( unsigned short *x, unsigned short *y )
 {
 unsigned short temp[NI], num[NI], sq[NI], xx[NI];
 int i, j, k, n, nlups;

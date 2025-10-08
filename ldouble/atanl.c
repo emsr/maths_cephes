@@ -173,8 +173,7 @@ extern long double NANL;
 extern long double NEGZEROL;
 #endif
 
-long double atanl(x)
-long double x;
+long double atanl(long double x)
 {
 extern long double PIO2L, PIO4L;
 long double y, z;

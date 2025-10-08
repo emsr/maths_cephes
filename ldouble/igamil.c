@@ -68,8 +68,7 @@ long double ndtril(), expl(), fabsl(), logl(), sqrtl(), lgaml();
 long double igamcl();
 #endif
 
-long double igamil( a, y0 )
-long double a, y0;
+long double igamil( long double a, long double y0 )
 {
 long double x0, x1, x, yl, yh, y, d, lgm, dithresh;
 int i, dir;

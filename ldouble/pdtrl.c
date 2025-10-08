@@ -134,9 +134,7 @@ extern long double igamil ( long double, long double );
 long double igaml(), igamcl(), igamil();
 #endif
 
-long double pdtrcl( k, m )
-int k;
-long double m;
+long double pdtrcl( int k, long double m )
 {
 long double v;
 

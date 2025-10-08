@@ -160,6 +160,7 @@ target_include_directories(maths_cephes PUBLIC
   misc
   polyn
   c9x-complex)
+target_compile_definitions(maths_cephes PUBLIC ANSIPROT)
 
 # This was an interesting disaster!
 #	    cmath/sincos.c

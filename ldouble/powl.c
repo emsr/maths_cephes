@@ -395,8 +395,7 @@ extern long double NANL;
 extern long double NEGZEROL;
 #endif
 
-long double powl( x, y )
-long double x, y;
+long double powl( long double x, long double y )
 {
 /* double F, Fa, Fb, G, Ga, Gb, H, Ha, Hb */
 int i, nflg, iyflg, yoddint;
@@ -727,8 +726,7 @@ return( z );
 
 
 /* Find a multiple of 1/NXT that is within 1/NXT of x. */
-static long double reducl(x)
-long double x;
+static long double reducl(long double x)
 {
 long double t;
 

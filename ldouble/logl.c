@@ -197,8 +197,7 @@ extern long double INFINITYL;
 extern long double NANL;
 #endif
 
-long double logl(x)
-long double x;
+long double logl(long double x)
 {
 long double y, z;
 int e;

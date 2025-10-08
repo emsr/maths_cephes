@@ -56,9 +56,7 @@ extern long double j1l ( long double );
 long double fabsl(), j0l(), j1l();
 #endif
 
-long double jnl( n, x )
-int n;
-long double x;
+long double jnl( int n, long double x )
 {
 long double pkm2, pkm1, pk, xk, r, ans;
 int k, sign;

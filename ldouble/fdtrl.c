@@ -168,9 +168,7 @@ extern long double incbil ( long double, long double, long double );
 long double incbetl(), incbil();
 #endif
 
-long double fdtrcl( ia, ib, x )
-int ia, ib;
-long double x;
+long double fdtrcl( int ia, int ib, long double x )
 {
 long double a, b, w;
 

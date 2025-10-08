@@ -156,8 +156,7 @@ extern long double igamil ( long double, long double );
 long double igamcl(), igaml(), igamil();
 #endif
 
-long double chdtrcl(df,x)
-long double df, x;
+long double chdtrcl(long double df,long double x)
 {
 
 if( (x < 0.0L) || (df < 1.0L) )
@@ -170,8 +169,7 @@ return( igamcl( 0.5L*df, 0.5L*x ) );
 
 
 
-long double chdtrl(df,x)
-long double df, x;
+long double chdtrl(long double df,long double x)
 {
 
 if( (x < 0.0L) || (df < 1.0L) )
@@ -184,8 +182,7 @@ return( igaml( 0.5L*df, 0.5L*x ) );
 
 
 
-long double chdtril( df, y )
-long double df, y;
+long double chdtril( long double df, long double y )
 {
 long double x;
 

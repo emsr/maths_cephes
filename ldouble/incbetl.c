@@ -78,8 +78,7 @@ long double gammal(), lgaml(), expl(), logl(), fabsl(), powl();
 static long double incbcfl(), incbdl(), pseriesl();
 #endif
 
-long double incbetl( aa, bb, xx )
-long double aa, bb, xx;
+long double incbetl( long double aa, long double bb, long double xx )
 {
 long double a, b, t, x, w, xc, y;
 int flag;
@@ -272,8 +271,7 @@ return(ans);
  * for incomplete beta integral
  */
 
-static long double incbdl( a, b, x )
-long double a, b, x;
+static long double incbdl( long double a, long double b, long double x )
 {
 long double xk, pk, pkm1, pkm2, qk, qkm1, qkm2;
 long double k1, k2, k3, k4, k5, k6, k7, k8;

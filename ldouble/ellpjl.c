@@ -73,9 +73,8 @@ long double sinhl(), coshl(), atanl(), expl();
 #endif
 extern long double PIO2L, MACHEPL;
 
-int ellpjl( u, m, sn, cn, dn, ph )
-long double u, m;
-long double *sn, *cn, *dn, *ph;
+int ellpjl( long double u, long double m,
+            long double *sn, long double *cn, long double *dn, long double *ph )
 {
 long double ai, b, phi, t, twon;
 long double a[9], c[9];

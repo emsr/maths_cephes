@@ -94,8 +94,7 @@ extern long double p1evll ( long double, void *, int );
 long double fabsl(), expl(), polevll(), p1evll();
 #endif
 
-long double tanhl(x)
-long double x;
+long double tanhl(long double x)
 {
 long double s, z;
 

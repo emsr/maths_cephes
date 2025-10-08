@@ -67,8 +67,7 @@ long double sqrtl(), acosl(), asinl(), atanl();
 #endif
 extern long double PIL;
 
-long double arcdotl(p,q)
-long double p[], q[];
+long double arcdotl(long double p[3], long double q[3])
 {
 long double pp, pr, qq, rr, rt, pt, qt, pq;
 int i;

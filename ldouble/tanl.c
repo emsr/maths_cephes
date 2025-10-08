@@ -187,8 +187,7 @@ return( tancotl(x,0) );
 }
 
 
-long double cotl(x)
-long double x;
+long double cotl(long double x)
 {
 
 if( x == 0.0L )
@@ -204,9 +203,7 @@ return( tancotl(x,1) );
 }
 
 
-static long double tancotl( xx, cotflg )
-long double xx;
-int cotflg;
+static long double tancotl( long double xx, int cotflg )
 {
 long double x, y, z, zz;
 int j, sign;

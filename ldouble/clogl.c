@@ -69,8 +69,7 @@ void caddl(), csqrtl(), clogl(), casinl();
 
 extern long double MAXNUML, MACHEPL, PIL, PIO2L;
 
-void clogl( z, w )
-register cmplxl *z, *w;
+void clogl( register cmplxl *z, register cmplxl *w )
 {
 long double p, rr;
 
@@ -125,8 +124,7 @@ w->r = p;
  *
  */
 
-void cexpl( z, w )
-register cmplxl *z, *w;
+void cexpl( register cmplxl *z, register cmplxl *w )
 {
 long double r;
 
@@ -170,8 +168,7 @@ w->i = r * sinl( z->i );
  *
  */
 
-void csinl( z, w )
-register cmplxl *z, *w;
+void csinl( register cmplxl *z, register cmplxl *w )
 {
 long double ch, sh;
 
@@ -184,8 +181,7 @@ w->i = cosl( z->r ) * sh;
 
 /* calculate cosh and sinh */
 
-static void cchshl( x, c, s )
-long double x, *c, *s;
+static void cchshl( long double x, long double *c, long double *s )
 {
 long double e, ei;
 
@@ -238,8 +234,7 @@ else
  *    IEEE      -10,+10     30000       3.8e-16     1.0e-16
  */
 
-void ccosl( z, w )
-register cmplxl *z, *w;
+void ccosl( register cmplxl *z, register cmplxl *w )
 {
 long double ch, sh;
 
@@ -287,8 +282,7 @@ w->i = -sinl( z->r ) * sh;
  * Also tested by ctan * ccot = 1 and catan(ctan(z))  =  z.
  */
 
-void ctanl( z, w )
-register cmplxl *z, *w;
+void ctanl( register cmplxl *z, register cmplxl *w )
 {
 long double d;
 
@@ -348,8 +342,7 @@ w->i = sinhl( 2.0L * z->i ) / d;
  * Also tested by ctan * ccot = 1 + i0.
  */
 
-void ccotl( z, w )
-register cmplxl *z, *w;
+void ccotl( register cmplxl *z, register cmplxl *w )
 {
 long double d;
 
@@ -411,8 +404,7 @@ static unsigned short P3[] = {
 #define DP3 *(double *)P3
 #endif
 
-static long double redupil(x)
-long double x;
+static long double redupil(long double x)
 {
 long double t;
 long i;
@@ -431,8 +423,7 @@ return(t);
 
 /*  Taylor series expansion for cosh(2y) - cos(2x)	*/
 
-static long double ctansl(z)
-cmplxl *z;
+static long double ctansl(cmplxl *z)
 {
 long double f, x, x2, y, y2, rn, t;
 long double d;
@@ -507,8 +498,7 @@ return(d);
  * Also tested by csin(casin(z)) = z.
  */
 
-void casinl( z, w )
-cmplxl *z, *w;
+void casinl( cmplxl *z, cmplxl *w )
 {
 static cmplxl ca, ct, zz, z2;
 long double x, y;
@@ -625,8 +615,7 @@ return;
  *    IEEE      -10,+10     30000      1.8e-14      2.2e-15
  */
 
-void cacosl( z, w )
-cmplxl *z, *w;
+void cacosl( cmplxl *z, cmplxl *w )
 {
 
 casinl( z, w );
@@ -680,8 +669,7 @@ w->i = -w->i;
  * 2.9e-17.  See also clog().
  */
 
-void catanl( z, w )
-cmplxl *z, *w;
+void catanl( cmplxl *z, cmplxl *w )
 {
 long double a, t, x, x2, y;
 

@@ -31,8 +31,7 @@ static long double coscof[7] = {
 
 extern long double PIO4L;
 
-long double cosm1l(x)
-long double x;
+long double cosm1l(long double x)
 {
 long double xx;
 

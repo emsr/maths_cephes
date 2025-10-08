@@ -83,8 +83,7 @@ minarg = -4.5054566736396445112120088E1L;
 extern long double INFINITYL;
 #endif
 
-long double expm1l(x)
-long double x;
+long double expm1l(long double x)
 {
 long double px, qx, xx;
 int k;

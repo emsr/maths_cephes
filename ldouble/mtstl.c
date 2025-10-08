@@ -99,14 +99,12 @@ double iv(), kn();
 */
 
 /* Provide inverses for square root and cube root: */
-long double squarel(x)
-long double x;
+long double squarel(long double x)
 {
 return( x * x );
 }
 
-long double cubel(x)
-long double x;
+long double cubel(long double x)
 {
 return( x * x * x );
 }

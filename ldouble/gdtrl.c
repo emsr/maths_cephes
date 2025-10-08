@@ -103,8 +103,7 @@ extern long double igamcl ( long double, long double );
 long double igaml(), igamcl();
 #endif
 
-long double gdtrl( a, b, x )
-long double a, b, x;
+long double gdtrl( long double a, long double b, long double x )
 {
 
 if( x < 0.0L )
@@ -117,8 +116,7 @@ return(  igaml( b, a * x )  );
 
 
 
-long double gdtrcl( a, b, x )
-long double a, b, x;
+long double gdtrcl( long double a, long double b, long double x )
 {
 
 if( x < 0.0L )

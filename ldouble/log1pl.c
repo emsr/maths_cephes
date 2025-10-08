@@ -193,8 +193,7 @@ extern long double INFINITYL;
 extern long double NANL;
 #endif
 
-long double log1pl(xm1)
-long double xm1;
+long double log1pl(long double xm1)
 {
 long double x, y, z;
 int e;

@@ -67,11 +67,7 @@ C
 #include <stdio.h>
 #define fabsl(x) ( (x) < 0.0L ? -(x) : (x) )
 
-int gels( A, R, M, EPS, AUX )
-long double A[],R[];
-int M;
-long double EPS;
-long double AUX[];
+int gels( long double A[], long double R[], int M, long double EPS, long double AUX[] )
 {
 int I, J, K, L, IER;
 int II, LL, LLD, LR, LT, LST, LLST, LEND;

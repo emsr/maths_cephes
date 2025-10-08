@@ -96,9 +96,7 @@ extern long double fabsl ( long double );
 long double sqrtl(), atanl(), incbetl(), incbil(), fabsl();
 #endif
 
-long double stdtrl( k, t )
-int k;
-long double t;
+long double stdtrl( int k, long double t )
 {
 long double x, rk, z, f, tz, p, xsqk;
 int j;

@@ -370,8 +370,7 @@ extern long double NANL;
 
 /* Gamma function computed by Stirling's formula.
  */
-static long double stirf(x)
-long double x;
+static long double stirf(long double x)
 {
 long double y, w, v;
 

@@ -256,9 +256,7 @@ exit(0);
 return 0;
 }
 
-void flierr( x, y, k )
-long double x, y;
-int k;
+void flierr( long double x, long double y, int k )
 {
 printf( "Test %d: ", k+1 );
 printf( "floorl(%.15Le) =?= %.15Le\n", x, y );

@@ -78,7 +78,7 @@ double fabs(), cabs(), sqrt(), atan2(), cos(), sin();
 double sqrt(), frexp(), ldexp();
 #endif
 
-int isnan();
+int isnan(double);
 
 extern double MAXNUM, MACHEP, PI, PIO2, INFINITY;
 double complex czero = 0.0;
@@ -87,8 +87,7 @@ double complex cone = 1.0;
 /*	c = b + a	*/
 
 double complex
-cadd( a, b )
-     double complex a, b;
+cadd( double complex a, double complex b )
 {
   return (creal (b) + creal (a) + (cimag (b) + cimag (a)) * I);
 }
@@ -97,8 +96,7 @@ cadd( a, b )
 /*	c = b - a	*/
 
 double complex
-csub( a, b )
-     double complex a, b;
+csub( double complex a, double complex b )
 {
   return (creal (b) - creal (a) + (cimag (b) - cimag (a)) * I);
 }
@@ -106,8 +104,7 @@ csub( a, b )
 /*	c = b * a */
 
 double complex
-cmul( a, b )
-     double complex a, b;
+cmul( double complex a, double complex b )
 {
   return ((creal (b) * creal (a) - cimag (b) * cimag (a))
 	  + (creal (b) * cimag (a) + cimag (b) * creal (a)) * I);
@@ -118,8 +115,7 @@ cmul( a, b )
 /*	c = b / a */
 
 double complex
-cdiv( a, b )
-     double complex a, b;
+cdiv( double complex a, double complex b )
 {
   double y, p, q, w;
 
@@ -209,8 +205,7 @@ Direct inquiries to 30 Frost Street, Cambridge, MA 02140
 
 #if 1
 double
-cabs( z )
-     double complex z;
+cabs( double complex z )
 {
   double x, y, b, re, im;
   int ex, ey, e;
@@ -321,8 +316,7 @@ cabs( z )
 
 
 double complex
-csqrt (z)
-     double complex z;
+csqrt (double complex z)
 {
   double complex w;
   double x, y, r, t, scale;
@@ -403,8 +397,7 @@ csqrt (z)
 
 
 double
-hypot( x, y )
-     double x, y;
+hypot( double x, double y )
 {
   double complex z;
 

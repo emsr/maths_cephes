@@ -53,9 +53,7 @@ extern long double frexpl ( long double, int * );
 long double frexpl();
 #endif
 
-long double powil( x, nn )
-long double x;
-int nn;
+long double powil( long double x, int nn )
 {
 long double w, y;
 long double s;

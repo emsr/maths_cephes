@@ -374,8 +374,7 @@ static long double erfcel();
 extern long double INFINITYL;
 #endif
 
-long double ndtrl(a)
-long double a;
+long double ndtrl(long double a)
 {
 long double x, y, z;
 
@@ -400,8 +399,7 @@ return(y);
 }
 
 
-long double erfcl(a)
-long double a;
+long double erfcl(long double a)
 {
 long double p,q,x,y,z;
 
@@ -463,8 +461,7 @@ return(y);
    valid for x > 1.
    Use with ndtrl and expx2l.  */
 
-static long double erfcel(x)
-long double x;
+static long double erfcel(long double x)
 {
 long double p, q, y;
 
@@ -487,8 +484,7 @@ return(y);
 
 
 
-long double erfl(x)
-long double x;
+long double erfl(long double x)
 {
 long double y, z;
 
